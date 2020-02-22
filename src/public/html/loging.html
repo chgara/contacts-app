@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/css/loader.css" />
+        <script src="/js/loader.js"></script>
+        <link
+            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/css/loging-register.css" />
+        <link rel="stylesheet" href="/css/loging.css" />
+        <script defer src="/js/register.js"></script>
+        <title>Login</title>
+    </head>
+    <body>
+        <div id="loader-box" class="loader-box ">
+            <div class="loader">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="loging-page">
+            <div class="loging-box">
+                <div class="loging-errors"></div>
+                <h3 class="loging-title">Please Log In</h3>
+                <form>
+                    <div class="input-group">
+                        <label for="loging-email">Email</label>
+                        <input
+                            type="email"
+                            id="loging-email"
+                            name="loging-email"
+                            placeholder="Put your Email"
+                            required
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="loging-pasword">Pasword</label>
+                        <input
+                            type="password"
+                            name="loging-pasword"
+                            id="loging-pasword"
+                            placeholder="Put your Pasword"
+                            required
+                        />
+                    </div>
+                    <div class="loging-box-button">
+                        <button type="submit" class="loging-button">
+                            Sing In
+                        </button>
+                    </div>
+                    <div class="register-box-txt">
+                        <p class="register-txt">
+                            If you are´nt registered, please
+                            <a href="/register">register now</a>
+                            or go
+                            <a href="/home">home</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

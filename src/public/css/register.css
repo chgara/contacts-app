@@ -1,0 +1,9 @@
+.loging-page {
+    background-image: url(../images/fondo-register.jpg);
+}
+.loging-box {
+    background-color: hsla(201, 100%, 6%, 0.748);
+}
+.input-group input {
+    background-color: hsla(201, 100%, 91%, 0.7);
+}

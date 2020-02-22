@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Quicksand", sans-serif;
+}
+.main-page {
+    width: 100vw;
+    height: 99.99vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/log-bg-image.jpg);
+    background-color: black;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main-box {
+    width: 70%;
+    height: 70%;
+    border-radius: 8px;
+    background-color: hsla(270, 20%, 10%, 0.884);
+}
+.main-box h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 12.5%;
+    font-size: 2em;
+    transition: transform 0.5s ease-in-out;
+}
+.main-box h3:hover {
+    transform: scale(1.2);
+    font-weight: 600;
+}
+.btns-box {
+    height: 77.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.outer-div {
+    width: 40%;
+    height: 50%;
+    display: inline-block;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.log-box,
+.reg-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background-image: url(../images/log-in.jpg);
+    transform: rotate(180deg);
+    background-size: cover;
+    background-position: center center;
+    transition: 0.5s ease-in-out;
+}
+.log-box:hover,
+.reg-box:hover {
+    transform: scale(1.2) rotate(-180deg);
+}
+.reg-box {
+    background-image: url(../images/log-reg.jpg) !important;
+}
+.log-text-box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-180deg) !important;
+    position: relative;
+}
+.log-text-box h2 {
+    z-index: 10;
+}
+.log-text-box::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.707);
+    transition: 0.5s ease-in-out;
+    transform: translateX(-100%);
+}
+.log-text-box:hover::before {
+    transform: translateX(0%);
+}
+.log-box h2,
+.reg-box h2 {
+    font-size: 2em;
+}
+.log-box img,
+.reg-box img {
+    width: 100%;
+    height: 100%;
+}
+.go-home {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    transition: transform 0.5s ease-in-out;
+}
+.go-home i {
+    margin-right: 1.5%;
+}
+.go-home:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+}
+@media screen and (max-width: 1090px) {
+    .main-box {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 960px) {
+    .outer-div {
+        width: 40%;
+    }
+    .main-box {
+        width: 85%;
+    }
+}
+@media screen and (max-width: 720px) {
+    .outer-div {
+        width: 35%;
+    }
+}
+@media screen and (max-width: 620px) {
+    .outer-div {
+        width: 40%;
+    }
+    .main-box {
+        width: 90%;
+    }
+    .main-box h3 {
+        font-size: 1.7em;
+    }
+}
+@media screen and (max-width: 500px) {
+    .outer-div {
+        width: 40%;
+    }
+    .main-box {
+        width: 95%;
+    }
+    .main-box h3 {
+        font-size: 1.7em;
+    }
+}
+@media screen and (max-width: 450px) {
+    .btns-box {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .main-box h3 {
+        font-size: 1.5em;
+    }
+    .outer-div {
+        height: 40%;
+        width: 50%;
+    }
+    .main-box {
+        height: 80%;
+    }
+}
+@media screen and (max-width: 370px) {
+    .main-box h3 {
+        font-size: 1.3em;
+    }
+    .outer-div {
+        height: 40%;
+        width: 55%;
+    }
+    .main-box {
+        height: 80%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .main-box h3 {
+        font-size: 1.2em;
+    }
+    .outer-div {
+        height: 40%;
+        width: 60%;
+    }
+    .main-box {
+        height: 80%;
+    }
+}
