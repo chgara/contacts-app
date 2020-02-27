@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include("components/links/loader-links") %> <%-
+        include("components/links/login-register") %>
+        <link rel="stylesheet" href="/css/register.css" />
+        <title>Register</title>
+    </head>
+    <body>
+        <%- include("components/parts/loader") %>
+        <div class="loging-page">
+            <div class="loging-box">
+                <div class="loging-errors"></div>
+                <h3 class="loging-title">Please Register</h3>
+                <form method="POST" action="/register">
+                    <div class="input-group">
+                        <label for="userName">UserName</label>
+                        <input
+                            type="text"
+                            id="userName"
+                            name="userName"
+                            placeholder="Select a username"
+                            required
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Put your Email"
+                            required
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Put your Password"
+                            required
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input
+                            type="password"
+                            name="cofirm-password"
+                            id="confirm-password"
+                            placeholder="Put the password"
+                            required
+                        />
+                    </div>
+                    <div class="loging-box-button">
+                        <button
+                            type="submit"
+                            class="loging-button"
+                            value="Register"
+                        >
+                            Sing In
+                        </button>
+                    </div>
+                    <div class="register-box-txt">
+                        <p class="register-txt">
+                            If you are registered, please
+                            <a href="/login">Log in now</a>
+                            or go
+                            <a href="/home">home</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

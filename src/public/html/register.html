@@ -9,9 +9,8 @@
             href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="/css/loging-register.css" />
-        <link rel="stylesheet" href="/css/register.css" />
-        <script defer src="/js/register.js"></script>
+        <link rel="stylesheet" href="../css/loging-register.css" />
+        <link rel="stylesheet" href="../css/register.css" />
         <title>Register</title>
     </head>
     <body>
@@ -33,6 +32,16 @@
                 <div class="loging-errors"></div>
                 <h3 class="loging-title">Please Register a New User</h3>
                 <form>
+                    <div class="input-group">
+                        <label for="loging-name">Name</label>
+                        <input
+                            type="text"
+                            name="loging-name"
+                            id="loging-name"
+                            placeholder="Put your Name"
+                            required
+                        />
+                    </div>
                     <div class="input-group">
                         <label for="loging-email">Email</label>
                         <input

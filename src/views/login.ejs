@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include("components/links/loader-links") %> <%-
+        include("components/links/login-register") %>
+        <link rel="stylesheet" href="css/login.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <%- include("components/parts/loader") %>
+        <div class="loging-page">
+            <div class="loging-box">
+                <% if (message.length) { %> <%-
+                include('components/parts/log-error-box') %> <% } %>
+                <div class="loging-errors"></div>
+                <h3 class="loging-title">Please Log In</h3>
+                <form method="POST" action="/login">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Put your Email"
+                            required
+                        />
+                    </div>
+                    <div class="input-group">
+                        <label for="pasword">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="Put your Password"
+                            required
+                        />
+                    </div>
+                    <div class="loging-box-button">
+                        <button
+                            type="submit"
+                            class="loging-button"
+                            value="Login"
+                        >
+                            Sing In
+                        </button>
+                    </div>
+                    <div class="register-box-txt">
+                        <p class="register-txt">
+                            If you are´nt registered, please
+                            <a href="/register">register now</a>
+                            or go
+                            <a href="/home">home</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
