@@ -2,7 +2,6 @@ const expres = require("express");
 const router = new expres.Router();
 const flash = require("connect-flash");
 const { registerAuth, loginAuth } = require("../config/log-auth");
-const passport = require("../config/passport");
 
 //////////Getting main routes//////////
 

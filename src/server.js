@@ -8,7 +8,6 @@ const path = require("path");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const pageRouter = require("./app/router");
-const { database } = require("./database/database");
 
 const app = express();
 
