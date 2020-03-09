@@ -12,17 +12,20 @@
         <%- include("components/parts/loader") %>
         <div class="loging-page">
             <div class="loging-box">
-                <div class="loging-errors"></div>
+                <% if (typeof errors != 'undefined') { %> <% if (errors.length)
+                { %> <%- include("components/parts/error-box") %> <% } %> <% }
+                %>
+
                 <h3 class="loging-title">Please Register</h3>
                 <form method="POST" action="/register">
                     <div class="input-group">
-                        <label for="userName">UserName</label>
+                        <label for="userName">User Name</label>
                         <input
                             type="text"
-                            id="userName"
-                            name="userName"
+                            id="username"
+                            name="username"
                             placeholder="Select a username"
-                            required
+                            value="<%= typeof username!= 'undefined' ? username : '' %>"
                         />
                     </div>
                     <div class="input-group">
@@ -32,7 +35,8 @@
                             id="email"
                             name="email"
                             placeholder="Put your Email"
-                            required
+                            value="<%= typeof email !=
+                        'undefined' ? email : null %> "
                         />
                     </div>
                     <div class="input-group">
@@ -42,17 +46,19 @@
                             name="password"
                             id="password"
                             placeholder="Put your Password"
-                            required
+                            value="<%= typeof
+                        password!= 'undefined' ? password : '' %>"
                         />
                     </div>
                     <div class="input-group">
                         <label for="confirm-password">Confirm Password</label>
                         <input
                             type="password"
-                            name="cofirm-password"
+                            name="password2"
                             id="confirm-password"
                             placeholder="Put the password"
-                            required
+                            value="<%= typeof password2!= 'undefined' ? password2 :
+                        '' %>"
                         />
                     </div>
                     <div class="loging-box-button">
@@ -66,7 +72,7 @@
                     </div>
                     <div class="register-box-txt">
                         <p class="register-txt">
-                            If you are registered, please
+                            You have an accoutn?
                             <a href="/login">Log in now</a>
                             or go
                             <a href="/home">home</a>

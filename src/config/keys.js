@@ -1,6 +1,6 @@
 module.exports = {
     database: {
-        connectionLimit: 10,
+        connectionLimit: 5,
         host: "localhost",
         user: "root",
         password: "airsoftG15935700g%",

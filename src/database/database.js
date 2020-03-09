@@ -2,7 +2,7 @@ const util = require("util");
 const mysql = require("mysql");
 const colors = require("colors");
 
-const { database } = require("./keys");
+const { database } = require("../config/keys");
 
 /**
  * Connection to the database

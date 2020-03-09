@@ -61,7 +61,6 @@ body {
     height: 100%;
     overflow: hidden;
     position: relative;
-    background-image: url(../images/log-in.jpg);
     transform: rotate(180deg);
     background-size: cover;
     background-position: center center;
@@ -71,8 +70,11 @@ body {
 .reg-box:hover {
     transform: scale(1.2) rotate(-180deg);
 }
+.log-box {
+    background-image: url(../images/log-in.jpg);
+}
 .reg-box {
-    background-image: url(../images/log-reg.jpg) !important;
+    background-image: url(../images/log-reg.jpg);
 }
 .log-text-box {
     width: 100%;
@@ -88,18 +90,22 @@ body {
 }
 .log-text-box::before {
     content: "";
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 150%;
     position: absolute;
     z-index: 5;
     top: 0;
     left: 0;
     background-color: hsla(0, 0%, 0%, 0.707);
     transition: 0.5s ease-in-out;
-    transform: translateX(-100%);
+    transform: translateX(0%);
+}
+.log-box:hover h2,
+.reg-box:hover h2 {
+    color: transparent;
 }
 .log-text-box:hover::before {
-    transform: translateX(0%);
+    transform: translateX(-100%);
 }
 .log-box h2,
 .reg-box h2 {

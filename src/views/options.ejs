@@ -3,17 +3,13 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="../css/nav.css" />
-        <link rel="stylesheet" href="../css/log.css" />
-        <link rel="stylesheet" href="../css/contacts.css" />
-        <script defer src="../js/nav.js"></script>
-        <title>Contacts</title>
+        <%- include("components/links/loader-links") %><%-
+        include("components/links/contacts-options-links") %>
+        <title>Contacts Options</title>
     </head>
     <body>
+        <%- include("components/parts/loader") %>
+
         <section class="main-page">
             <div class="main-box">
                 <h3>What you want to do?</h3>
@@ -28,7 +24,7 @@
                     <a href="/contacts/view" class="outer-div">
                         <div class="reg-box">
                             <div class="log-text-box">
-                                <h2>View and edit</h2>
+                                <h2>View</h2>
                             </div>
                         </div>
                     </a>

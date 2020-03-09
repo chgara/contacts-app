@@ -1,17 +1,18 @@
 const express = require("express");
-const colors = require("colors");
-const path = require("path");
-const app = express();
-const morgan = require("morgan");
-const passport = require("passport");
 const session = require("express-session");
-const mysqlSession = require("express-mysql-session");
 const flash = require("connect-flash");
-const cookieParser = require("cookie-parser");
+const colors = require("colors");
+const passport = require("passport");
+const coockieParser = require("cookie-parser");
+const path = require("path");
+const morgan = require("morgan");
+const bodyParser = require("body-parser");
 const pageRouter = require("./app/router");
-const { database } = require("./app/database");
+const { database } = require("./database/database");
 
-////////Database connect////
+const app = express();
+
+app.set("port", process.env.PORT || 3000);
 
 //////SETTINGS///////
 app.set("views", path.join(__dirname, "views"));
@@ -19,40 +20,52 @@ app.set("view engine", "ejs");
 
 ////////STATIC FILES////////
 
+app.set(express.static(path.join(__dirname, "public")));
+
 app.use(express.static(path.join(__dirname, "public")));
 
-/////MIDDLEWARES/////////
+//////////Midlewares//////////
 
-app.use(express.urlencoded({ extended: false }));
-app.use(morgan("dev"));
 app.use(express.json());
-
-app.use(cookieParser("secret"));
 app.use(
     session({
-        secret: "secret",
+        secret: "contacts secret app",
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 60 * 1000 * 30
+            maxAge: 60000
         }
     })
 );
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(coockieParser("Secret message"));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
-////////ROUTES/////////
+//////////GLOBAL//////////
+app.use((req, res, next) => {
+    app.locals.user = req.user;
+    app.locals.error = req.flash("error");
+    app.locals.success = req.flash("success");
+    next();
+});
+app.use(morgan("dev"));
+
+//////////Routes//////////
 
 app.use("/", pageRouter);
 
-//////IF THE URL IS INVALID/////
+///////////Global//////////
 
 app.use((req, res, next) => {
-    var err = new Error(res.render("404"));
+    let error = new Error();
+    res.render("404");
+    next();
 });
-app.listen(process.env.PORT || 3000, function() {
-    console.log(
-        "Example app listening on port: ".cyan.bold +
-            `${this.address().port}`.magenta.bold
-    );
-});
-module.exports = app;
+
+//appListening//
+app.listen(
+    app.get("port"),
+    console.log(`Server on port: ${app.get("port")}`.cyan)
+);

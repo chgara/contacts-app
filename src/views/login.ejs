@@ -12,9 +12,9 @@
         <%- include("components/parts/loader") %>
         <div class="loging-page">
             <div class="loging-box">
-                <% if (message.length) { %> <%-
-                include('components/parts/log-error-box') %> <% } %>
-                <div class="loging-errors"></div>
+                <% if (typeof errors != 'undefined') { %> <% if (errors.length)
+                { %> <%- include("components/parts/error-box") %> <% } %> <% }
+                %>
                 <h3 class="loging-title">Please Log In</h3>
                 <form method="POST" action="/login">
                     <div class="input-group">
@@ -24,7 +24,7 @@
                             id="email"
                             name="email"
                             placeholder="Put your Email"
-                            required
+                            value="<%= typeof email!= 'undefined' ? email : '' %>"
                         />
                     </div>
                     <div class="input-group">
@@ -34,7 +34,7 @@
                             name="password"
                             id="password"
                             placeholder="Put your Password"
-                            required
+                            value="<%= typeof password!= 'undefined' ? password : '' %>"
                         />
                     </div>
                     <div class="loging-box-button">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="register-box-txt">
                         <p class="register-txt">
-                            If you are´nt registered, please
+                            You do´nt have an account?
                             <a href="/register">register now</a>
                             or go
                             <a href="/home">home</a>

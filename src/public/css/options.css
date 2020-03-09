@@ -1,0 +1,16 @@
+* {
+    color: rgb(255, 255, 255);
+}
+.main-page {
+    background-image: url(../images/options.jpg);
+}
+.log-box {
+    background-image: url(../images/new-contact.png);
+}
+.reg-box {
+    background-image: url(../images/contact-bg.png);
+}
+.log-box:hover,
+.reg-box:hover {
+    transform: scale(1.1) rotate(-180deg);
+}
