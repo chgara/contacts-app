@@ -59,6 +59,7 @@ body {
     outline: none;
     background-color: hsla(201, 100%, 91%, 0.3);
     font-size: 1.5em;
+    color: rgb(151, 145, 145);
     color: white;
     padding: 0.1em 0.25em;
     transition: 0.3s ease-in-out;

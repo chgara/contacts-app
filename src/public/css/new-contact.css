@@ -1,0 +1,14 @@
+.loging-page {
+    background-image: url(../images/new-contact-bg.jpg);
+}
+.loging-box {
+    background-color: hsla(260, 5%, 11%, 0.8);
+}
+.input-group input {
+    background-color: rgba(63, 44, 173, 0.278);
+}
+.input-group p {
+    color: white;
+    font-weight: bold;
+    font-size: 0.8em;
+}

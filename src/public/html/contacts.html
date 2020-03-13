@@ -4,39 +4,114 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
-            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+            href="https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap"
             rel="stylesheet"
         />
+        <link
+            rel="stylesheet"
+            href="../fontawesome-free-5.12.1-web/css/all.css"
+        />
         <link rel="stylesheet" href="../css/nav.css" />
-        <link rel="stylesheet" href="../css/log.css" />
-        <link rel="stylesheet" href="../css/contacts.css" />
         <script defer src="../js/nav.js"></script>
+        <link rel="stylesheet" href="../css/contacts.css" />
         <title>Contacts</title>
     </head>
     <body>
-        <section class="main-page">
-            <div class="main-box">
-                <h3>What you want to do?</h3>
-                <div class="btns-box">
-                    <a href="contacts/create" class="outer-div">
-                        <div class="log-box">
-                            <div class="log-text-box">
-                                <h2>Create</h2>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/contacts/view" class="outer-div">
-                        <div class="reg-box">
-                            <div class="log-text-box">
-                                <h2>View and edit</h2>
-                            </div>
-                        </div>
-                    </a>
+        <header>
+            <nav class="agenda-navbar">
+                <div class="navbar-logo">
+                    <img
+                        src="../images/agenda.png"
+                        alt="Logo agenda de contactos"
+                    />
                 </div>
-                <a href="/home" class="go-home">
-                    <i class="fas fa-home"></i>
-                    <p>Go home</p>
-                </a>
+
+                <div class="navbar-title">
+                    <h3><%= title %></h3>
+                </div>
+
+                <div class="burger-box">
+                    <div class="burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="navbar-list">
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contacts">Contacts</a></li>
+                        <li><a href="/log">Log</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section class="main-box">
+            <div class="contact-card">
+                <div class="name">
+                    <p>Paco Johns</p>
+                </div>
+                <div class="bottomm-line"></div>
+                <div class="relation">
+                    <p>Estilista</p>
+                </div>
+                <div class="phone">
+                    <p>600-600-600</p>
+                </div>
+                <div class="options">
+                    <div class="delete-btn"></div>
+                    <div class="edit-btn"></div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="name">
+                    <p>Paco Johns</p>
+                </div>
+                <div class="bottomm-line"></div>
+                <div class="relation">
+                    <p>Estilista</p>
+                </div>
+                <div class="phone">
+                    <p>600-600-600</p>
+                </div>
+                <div class="options">
+                    <div class="delete-btn"></div>
+                    <div class="edit-btn"></div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="name">
+                    <p>Paco Johns</p>
+                </div>
+                <div class="bottomm-line"></div>
+                <div class="relation">
+                    <p>Estilista</p>
+                </div>
+                <div class="phone">
+                    <p>600-600-600</p>
+                </div>
+                <div class="options">
+                    <div class="delete-btn"></div>
+                    <div class="edit-btn"></div>
+                </div>
+            </div>
+            <div class="contact-card">
+                <div class="name">
+                    <p>Paco Johns</p>
+                </div>
+                <div class="bottomm-line"></div>
+                <div class="relation">
+                    <p>Estilista</p>
+                </div>
+                <div class="phone">
+                    <p>600-600-600</p>
+                </div>
+                <div class="options">
+                    <div class="delete-btn"></div>
+                    <div class="edit-btn"></div>
+                </div>
             </div>
         </section>
     </body>
