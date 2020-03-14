@@ -1,4 +1,8 @@
-<div class="success-box">
-    <i class="fas fa-check-circle"></i>
-    <p><%= success%></p>
+<div class="succes-box">
+    <% success.forEach(success => { %>
+    <div class="success-msg">
+        <i class="fa fa-times-circle success-btn"></i>
+        <p><%= success %></p>
+    </div>
+    <% }) %>
 </div>

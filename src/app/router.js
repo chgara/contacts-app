@@ -1,8 +1,13 @@
 const expres = require("express");
 const router = new expres.Router();
 const flash = require("connect-flash");
+const colors = require("colors");
 const { registerAuth, loginAuth, newContact } = require("../config/log-auth");
 const passport = require("../config/passport");
+const {
+    isAuthenticated,
+    isNotAuthenticated
+} = require("../config/authentification");
 
 //////////Getting main routes//////////
 
@@ -16,51 +21,63 @@ router.get("/log", (req, res, next) => {
     res.render("log");
 });
 router.get("/login", (req, res, next) => {
-    res.render("login", { error: req.flash("error") });
+    res.render("login");
 });
 router.get("/register", (req, res, next) => {
-    res.render("register", { error: req.flash("error") });
+    res.render("register");
 });
-router.get("/contacts", (req, res, next) => {
-    res.render("contacts");
-});
-router.get("/contacts/new-contact", (req, res, next) => {
+router.get("/contacts/add", (req, res, next) => {
     res.render("new-contact");
 });
-router.get("/options", (req, res, next) => {
+router.get("/options", async (req, res, next) => {
     res.render("options");
+});
+router.get("/contacts", (req, res, next) => {
+    res.render("contacts", {
+        title: "Contacts",
+        number: 10
+    });
 });
 
 //////////Getting the post routes//////////
 
 router.post("/login", (req, res, next) => {
-    const { email, password } = req.body;
-    const success = loginAuth(req, res, email, password);
+    const { useremail, password } = req.body;
+    const success = loginAuth(req, res, useremail, password);
     if (success) {
-        res.redirect("/options");
+        passport.authenticate("local.login", {
+            successRedirect: "/contacts",
+            failureRedirect: "/contacts",
+            failureFlash: true
+        });
     }
 });
 
 router.post("/register", (req, res, next) => {
-    const { username, email, password, password2 } = req.body;
+    const { username, useremail, password, password2 } = req.body;
     const success = registerAuth(
         req,
         res,
         username,
-        email,
+        useremail,
         password,
         password2
     );
     if (success) {
-        res.redirect("/options");
+        passport.authenticate("local.register", {
+            successRedirect: "/contacts",
+            failureRedirect: "/contacts",
+            failureFlash: true
+        });
     }
 });
 
-router.post("/contacts/new-contact", (req, res, next) => {
+router.post("/contacts/add", (req, res, next) => {
     const { name, relation, number } = req.body;
     const success = newContact(req, res, name, relation, number);
     if (success) {
-        res.redirect("/options");
+        req.flash("success", "Contact added successfully");
+        res.redirect("/contacts");
     }
 });
 

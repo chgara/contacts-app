@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <%- include("components/links/loader-links-no-font") %> <%-
+        include("components/links/nav-links") %>
+        <link rel="stylesheet" href="/css/contacts.css" />
+        <script defer src="/js/contacts.js"></script>
+        <title>Contacts</title>
+    </head>
+    <body>
+        <%- include("components/parts/loader") %> <%-
+        include("components/parts/nav.ejs") %>
+        <section class="main-box">
+            <% if (typeof number !="undefined") { %> <% for( let index = 0;
+            index < number; index++ ) { %> <%-
+            include("components/parts/contact.ejs") %> <% } %> <% } %>
+
+            <a href="/contacts/add" class="add-contact">
+                <div class="add-btn">
+                    <p>+</p>
+                </div></a
+            >
+
+            <% if (typeof errors != 'undefined') { %> <% if (errors.length) { %>
+            <%- include("components/parts/error-box") %> <% } %> <% } %> <% if
+            (typeof success != 'undefined') { %> <% if (success.length) { %> <%-
+            include("components/parts/success-box") %> <% } %> <% } %>
+        </section>
+    </body>
+</html>

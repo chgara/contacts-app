@@ -1,5 +1,6 @@
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const colors = require("colors");
 const flash = require("connect-flash");
 const pool = require("../database/database");
 const bcrypt = require("../config/bcrypt");
@@ -15,6 +16,7 @@ passport.use(
         async (req, useremail, password, done) => {
             const sql = "Select * from useres where useremail = ?";
             const rows = await pool.query(sql, [useremail]);
+            console.log("Works".red);
             if (rows.length > 0) {
                 const user = rows[0];
                 const password = password;
@@ -69,7 +71,7 @@ passport.use(
                     return done(
                         null,
                         false,
-                        req.flash("error", "The email is allredy i use")
+                        req.flash("error", "The email is alredy in use")
                     );
                 } else {
                     return done(
@@ -96,3 +98,4 @@ passport.deserializeUser(async (id, done) => {
     ]);
     done(null, user[0]);
 });
+module.exports = passport;

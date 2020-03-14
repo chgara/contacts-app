@@ -27,21 +27,20 @@ app.use(express.static(path.join(__dirname, "public")));
 //////////Midlewares//////////
 
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
     session({
         secret: "contacts secret app",
-        resave: false,
-        saveUninitialized: false,
+        resave: true,
+        saveUninitialized: true,
         cookie: {
             maxAge: 60000
         }
     })
 );
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(coockieParser("Secret message"));
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 //////////GLOBAL//////////
 app.use((req, res, next) => {

@@ -13,3 +13,68 @@ html {
     margin: 0;
     padding: 0;
 }
+
+.error-box {
+    position: absolute;
+    top: 1%;
+    width: 80%;
+    right: 10%;
+}
+.error-msg {
+    background-color: hsla(0, 25%, 54%, 0.802);
+    color: red;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2.5%;
+    animation: appear 1s ease-in;
+}
+.error-msg p,
+.error-msg i {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.error-msg i {
+    position: absolute;
+    left: 5%;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.succes-box {
+    position: absolute;
+    top: 1%;
+    width: 40%;
+    min-width: 320px;
+    right: 30%;
+}
+.success-msg {
+    background-color: hsla(122, 25%, 54%, 0.802);
+    color: green;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 2.5%;
+    animation: appear 1s ease-in;
+}
+.success-msg p,
+.success-msg i {
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.success-msg i {
+    position: absolute;
+    left: 5%;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.none {
+    display: none !important;
+}
