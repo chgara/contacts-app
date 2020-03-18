@@ -11,6 +11,7 @@ module.exports = {
         if (!req.isAuthenticated()) {
             return next();
         } else {
+            req.flash("success", "You are loged");
             return res.redirect("/contacts");
         }
     }

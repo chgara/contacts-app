@@ -20,19 +20,19 @@ router.get("/home", (req, res, next) => {
 router.get("/log", (req, res, next) => {
     res.render("log");
 });
-router.get("/login", (req, res, next) => {
+router.get("/login", isNotAuthenticated, (req, res, next) => {
     res.render("login");
 });
-router.get("/register", (req, res, next) => {
+router.get("/register", isNotAuthenticated, (req, res, next) => {
     res.render("register");
 });
-router.get("/contacts/add", (req, res, next) => {
+router.get("/contacts/add", isAuthenticated, (req, res, next) => {
     res.render("new-contact");
 });
-router.get("/options", async (req, res, next) => {
+router.get("/options", isAuthenticated, async (req, res, next) => {
     res.render("options");
 });
-router.get("/contacts", (req, res, next) => {
+router.get("/contacts", isAuthenticated, (req, res, next) => {
     res.render("contacts", {
         title: "Contacts",
         number: 10
@@ -41,19 +41,19 @@ router.get("/contacts", (req, res, next) => {
 
 //////////Getting the post routes//////////
 
-router.post("/login", (req, res, next) => {
+router.post("/login", isNotAuthenticated, (req, res, next) => {
     const { useremail, password } = req.body;
     const success = loginAuth(req, res, useremail, password);
     if (success) {
         passport.authenticate("local.login", {
-            successRedirect: "/contacts",
-            failureRedirect: "/contacts",
+            successRedirect: "/options",
+            failureRedirect: "/login",
             failureFlash: true
-        });
+        })(req, res, next);
     }
 });
 
-router.post("/register", (req, res, next) => {
+router.post("/register", isNotAuthenticated, (req, res, next) => {
     const { username, useremail, password, password2 } = req.body;
     const success = registerAuth(
         req,
@@ -65,14 +65,14 @@ router.post("/register", (req, res, next) => {
     );
     if (success) {
         passport.authenticate("local.register", {
-            successRedirect: "/contacts",
-            failureRedirect: "/contacts",
+            successRedirect: "/options",
+            failureRedirect: "/register",
             failureFlash: true
-        });
+        })(req, res, next);
     }
 });
 
-router.post("/contacts/add", (req, res, next) => {
+router.post("/contacts/add", isAuthenticated, (req, res, next) => {
     const { name, relation, number } = req.body;
     const success = newContact(req, res, name, relation, number);
     if (success) {

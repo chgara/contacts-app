@@ -12,9 +12,6 @@
         <%- include("components/parts/loader") %>
         <div class="loging-page">
             <div class="loging-box">
-                <% if (typeof errors != 'undefined') { %> <% if (errors.length)
-                { %> <%- include("components/parts/error-box") %> <% } %> <% }
-                %>
                 <h3 class="loging-title">Please Log In</h3>
                 <form method="POST" action="/login">
                     <div class="input-group">
@@ -55,6 +52,7 @@
                         </p>
                     </div>
                 </form>
+                <%- include("components/parts/error-success") %>
             </div>
         </div>
     </body>

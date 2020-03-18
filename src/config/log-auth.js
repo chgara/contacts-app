@@ -10,13 +10,13 @@ const registerAuth = (req, res, username, email, password, password2) => {
         /* errors.push({ error: "The passwords dose´nt match" })*/
         req.flash("error", "The passwords are different");
     }
-    if (username.length > 50) {
+    if (username.length > 35) {
         req.flash("error", "The username is to long");
     }
     const reqflash = req.flash("error");
     if (reqflash.length) {
         res.render("register", {
-            errors: reqflash,
+            error: reqflash,
             username,
             email,
             password,
@@ -33,7 +33,7 @@ const loginAuth = (req, res, email, password) => {
     if (!email || !password) {
         req.flash("error", "Please fill all the fields");
         res.render("login", {
-            errors: req.flash("error"),
+            error: req.flash("error"),
             email,
             password
         });
@@ -60,7 +60,7 @@ const newContact = (req, res, name, relation, number) => {
     const reqflash = req.flash("error");
     if (reqflash.length) {
         res.render("new-contact", {
-            errors: reqflash,
+            error: reqflash,
             name,
             relation,
             number

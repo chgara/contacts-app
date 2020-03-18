@@ -1,0 +1,3 @@
+<% if (typeof error != 'undefined') { %> <% if (error.length) { %> <%-
+include("error-box") %> <% } %> <% } %> <% if (typeof success != 'undefined') {
+%> <% if (success.length) { %> <%- include("success-box") %> <% } %> <% } %>

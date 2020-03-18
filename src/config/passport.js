@@ -14,15 +14,14 @@ passport.use(
             passReqToCallback: true
         },
         async (req, useremail, password, done) => {
-            const sql = "Select * from useres where useremail = ?";
+            const sql = "Select * from users where useremail = ?";
             const rows = await pool.query(sql, [useremail]);
-            console.log("Works".red);
             if (rows.length > 0) {
                 const user = rows[0];
-                const password = password;
+                const Inpassword = password;
                 const dbpassword = user.password;
-                const comparePassword = bcrypt.comparePasswords(
-                    password,
+                const comparePassword = await bcrypt.comparePasswords(
+                    Inpassword,
                     dbpassword
                 );
 
@@ -57,7 +56,6 @@ passport.use(
         async (req, useremail, password, done) => {
             const user = { useremail, username: req.body.username };
             user.password = await bcrypt.encryptPassword(password);
-
             const emailExists = await pool.query(
                 "SELECT * FROM users WHERE useremail = ?",
                 user.useremail
@@ -96,6 +94,7 @@ passport.deserializeUser(async (id, done) => {
     const user = await pool.query("SELECT * FROM users WHERE username = ?", [
         id
     ]);
+    console.log("serialazing", id);
     done(null, user[0]);
 });
 module.exports = passport;

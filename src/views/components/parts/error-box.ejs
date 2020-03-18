@@ -1,8 +1,8 @@
 <div class="error-box">
-    <% errors.forEach(error => { %>
+    <% error.forEach(err => { %>
     <div class="error-msg">
         <i class="fa fa-times-circle error-btn"></i>
-        <p><%= error %></p>
+        <p><%= err %></p>
     </div>
     <% }) %>
 </div>

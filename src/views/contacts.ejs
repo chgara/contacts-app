@@ -23,10 +23,7 @@
                 </div></a
             >
 
-            <% if (typeof errors != 'undefined') { %> <% if (errors.length) { %>
-            <%- include("components/parts/error-box") %> <% } %> <% } %> <% if
-            (typeof success != 'undefined') { %> <% if (success.length) { %> <%-
-            include("components/parts/success-box") %> <% } %> <% } %>
+            <%- include("components/parts/error-success") %>
         </section>
     </body>
 </html>
