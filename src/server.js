@@ -31,8 +31,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
     session({
         secret: "contacts secret app",
-        resave: true,
-        saveUninitialized: true,
+        resave: false,
+        saveUninitialized: false,
         cookie: {
             maxAge: 60000
         }
