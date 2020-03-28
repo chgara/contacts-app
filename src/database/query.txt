@@ -1,12 +1,12 @@
 
 
-CREATE TABLE contactlist
-    (
-        id INT AUTO_INCREMENT,
-        contactName varchar(30) NOT NULL,
-        contactRelation varchar(30) NOT NULL,
-        contactPhone varchar(15) NOT NULL,
-        username varchar(40) NOT NULL UNIQUE,
-        FOREIGN KEY (username) REFERENCES users(username),
-        PRIMARY KEY (id)
-    );
+CREATE TABLE `contactlist` (
+     `id` int NOT NULL AUTO_INCREMENT,
+     `contactName` varchar(30) NOT NULL,
+     `contactRelation` varchar(35) NOT NULL,
+     `contactPhone` varchar(15) NOT NULL,
+     `username` varchar(100) NOT NULL,
+      PRIMARY KEY (`id`),
+      KEY `username` (`username`),
+      FOREIGN KEY (`username`) REFERENCES `users` (`username`)
+);
