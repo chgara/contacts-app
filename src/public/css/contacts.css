@@ -17,6 +17,7 @@ html {
 }
 .main-box {
   position: relative;
+  max-width: 100vw;
   top: 12vh;
   padding: 1%;
   display: flex;

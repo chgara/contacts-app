@@ -29,14 +29,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
-    session({
-        secret: "contacts secret app",
-        resave: false,
-        saveUninitialized: false,
-        cookie: {
-            maxAge: 60000 ** 10
-        }
-    })
+  session({
+    secret: "contacts secret app",
+    resave: false,
+    saveUninitialized: false
+  })
 );
 app.use(passport.initialize());
 app.use(passport.session());
@@ -44,10 +41,10 @@ app.use(flash());
 
 //////////GLOBAL//////////
 app.use((req, res, next) => {
-    app.locals.user = req.user;
-    app.locals.error = req.flash("error");
-    app.locals.success = req.flash("success");
-    next();
+  app.locals.user = req.user;
+  app.locals.error = req.flash("error");
+  app.locals.success = req.flash("success");
+  next();
 });
 app.use(morgan("dev"));
 
@@ -58,13 +55,13 @@ app.use("/", pageRouter);
 ///////////Global//////////
 
 app.use((req, res, next) => {
-    let error = new Error();
-    res.render("404");
-    next();
+  let error = new Error();
+  res.render("404");
+  next();
 });
 
 //appListening//
 app.listen(
-    app.get("port"),
-    console.log(`Server on port: ${app.get("port")}`.cyan)
+  app.get("port"),
+  console.log(`Server on port: ${app.get("port")}`.cyan)
 );

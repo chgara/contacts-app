@@ -18,10 +18,10 @@ const {
 //////////Getting main routes//////////
 
 router.get("/", (req, res, next) => {
-  res.render("index", { title: "Home" });
+  res.render("index", { title: "Home", logHref: "/log", logmsg: "Log" });
 });
 router.get("/home", (req, res, next) => {
-  res.render("index", { title: "Home" });
+  res.render("index", { title: "Home", logHref: "/log", logmsg: "Log" });
 });
 router.get("/log", (req, res, next) => {
   res.render("log");
@@ -46,6 +46,8 @@ router.get("/contacts", isAuthenticated, async (req, res, next) => {
   const contacts = await getContacts(username);
   res.render("contacts", {
     title: "Contacts",
+    logHref: "/logout",
+    logmsg: "LogOut",
     contacts: contacts
   });
 });
@@ -62,6 +64,11 @@ router.get("/contacts/edit/:id", isAuthenticated, (req, res, next) => {
     action: "Edit",
     href: `/contacts/edit/${id}`
   });
+});
+
+router.get("/logout", isAuthenticated, (req, res, next) => {
+  req.logout();
+  res.redirect("/");
 });
 
 //////////Getting the post routes//////////
