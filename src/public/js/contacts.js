@@ -2,8 +2,8 @@ window.addEventListener("load", () => {
     const display = () => {
         const contacts = document.querySelectorAll(".contact-card");
         let delay = 0;
-        for (let i = 1; i < contacts.length; i++) {
-            contacts[1].classList.add("display");
+        for (let i = 0; i < contacts.length; i++) {
+            contacts[i].classList.add("display");
             contacts[i].animate(
                 [
                     // keyframes

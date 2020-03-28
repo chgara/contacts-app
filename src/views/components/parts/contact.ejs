@@ -1,16 +1,20 @@
+<% if (typeof contacts !=="undefined") { %> <% contacts.forEach(contact => { %>
+
 <div class="contact-card">
-    <div class="name">
-        <p>Paco Johns</p>
-    </div>
-    <div class="bottomm-line"></div>
-    <div class="relation">
-        <p>Estilista</p>
-    </div>
-    <div class="phone">
-        <p>600-600-600</p>
-    </div>
-    <div class="options">
-        <div class="delete-btn"></div>
-        <div class="edit-btn"></div>
-    </div>
+  <div class="name">
+    <p><%= contact.contactName %></p>
+  </div>
+  <div class="bottomm-line"></div>
+  <div class="relation">
+    <p><%= contact.contactRelation %></p>
+  </div>
+  <div class="phone">
+    <p><%= contact.contactPhone %></p>
+  </div>
+  <div class="options">
+    <a href="/contacts/delete/<%=contact.id%>" class="delete-btn"></a>
+    <a href="/contacts/edit/<%=contact.id%>" class="edit-btn"></a>
+  </div>
 </div>
+
+<% }) %> <% } %>

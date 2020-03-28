@@ -1,166 +1,177 @@
 * {
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    color: white;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  margin: 0;
+  padding: 0;
 }
 body,
 html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    font-family: "Quicksand", sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: "Quicksand", sans-serif;
 }
 .main-box {
-    position: relative;
-    top: 12vh;
-    padding: 1%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    overflow: hidden;
+  position: relative;
+  top: 12vh;
+  padding: 1%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
 }
 .contact-card {
-    width: 40%;
-    max-width: 500px;
-    min-width: 400px;
-    height: 200px;
-    text-align: center;
-    position: relative;
-    margin: 2% 0 2% 2%;
-    transition: 1s ease-in-out;
-    display: none;
+  width: 40%;
+  max-width: 500px;
+  min-width: 400px;
+  height: 200px;
+  text-align: center;
+  position: relative;
+  margin: 2% 0 2% 2%;
+  transition: 1s ease-in-out;
+  display: none;
 }
 .contact-card:hover {
-    box-shadow: 4px 4px 8px white;
-    transform: translateY(-2%);
+  box-shadow: 4px 4px 8px white;
+  transform: translateY(-2%);
 }
 .contact-card > div > p {
-    font-family: "Caveat", cursive;
+  font-family: "Caveat", cursive;
 }
 .name {
-    margin-top: 1%;
-    font-size: 3em;
-    font-weight: bold;
+  margin-top: 1%;
+  font-size: 3em;
+  font-weight: bold;
 }
 .bottomm-line {
-    width: 60%;
-    height: 1px;
-    background-color: white;
-    margin: 0 20%;
+  width: 60%;
+  height: 1px;
+  background-color: white;
+  margin: 0 20%;
 }
 .relation {
-    margin-top: 1%;
-    font-size: 1.5em;
+  margin-top: 1%;
+  font-size: 1.5em;
 }
 .phone {
-    font-size: 2em;
+  font-size: 2em;
 }
 .options {
-    width: 70px;
-    height: 30px;
-    position: absolute;
-    bottom: 2%;
-    right: 1%;
-    display: flex;
-    justify-content: space-between;
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  display: flex;
+  justify-content: space-between;
 }
 .delete-btn,
 .edit-btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
-    background-color: hsl(360, 73%, 58%);
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: hsl(360, 73%, 58%);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
 }
 .edit-btn {
-    background-color: hsl(137, 77%, 61%);
+  background-color: hsl(137, 77%, 61%);
 }
 .edit-btn:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 6px 3px #fff, /* inner white */ 0 0 10px 6px rgb(0, 255, 51),
-        /* middle magenta */ 0 0 14px 9px #0ff; /* outer cyan */
+  transform: scale(1.2);
+  box-shadow: 0 0 6px 3px #fff, /* inner white */ 0 0 10px 6px rgb(0, 255, 51),
+    /* middle magenta */ 0 0 14px 9px #0ff; /* outer cyan */
 }
 .delete-btn:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 6px 3px #fff, /* inner white */ 0 0 10px 6px rgb(255, 0, 0),
-        /* middle magenta */ 0 0 14px 9px #0ff; /* outer cyan */
+  transform: scale(1.2);
+  box-shadow: 0 0 6px 3px #fff, /* inner white */ 0 0 10px 6px rgb(255, 0, 0),
+    /* middle magenta */ 0 0 14px 9px #0ff; /* outer cyan */
 }
 .edit-text,
 .delete-text {
-    font-size: 25px;
-    position: absolute;
-    bottom: 15%;
-    right: 1%;
-    display: none;
+  font-size: 25px;
+  position: absolute;
+  bottom: 15%;
+  right: 1%;
+  display: none;
 }
 .delete-text {
-    right: 7.5%;
+  right: 7.5%;
 }
 .edit-btn:hover::before {
-    content: "Edit";
-    font-size: 1.5em;
-    position: relative;
-    top: -100%;
-    color: rgb(0, 255, 51);
-    right: 30%;
-    font-weight: bold;
+  content: "Edit";
+  font-size: 1.5em;
+  position: relative;
+  top: -100%;
+  color: rgb(0, 255, 51);
+  right: 30%;
+  font-weight: bold;
 }
 .delete-btn:hover::before {
-    content: "Delete";
-    font-size: 1.5em;
-    color: red;
-    position: relative;
-    font-weight: bold;
-    top: -100%;
-    right: 70%;
+  content: "Delete";
+  font-size: 1.5em;
+  color: red;
+  position: relative;
+  font-weight: bold;
+  top: -100%;
+  right: 70%;
 }
 .add-contact {
-    position: fixed;
-    bottom: 2%;
-    right: 2%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.5s ease-in-out;
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
 }
 .add-btn {
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    color: white;
-    background-color: #0ff;
-    font-size: 3em;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  color: white;
+  background-color: #0ff;
+  font-size: 3em;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 .add-btn p {
-    position: absolute;
-    top: -20%;
+  position: absolute;
+  top: -20%;
 }
 .add-contact:hover {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 @keyframes appear {
-    from {
-        transform: translateX(500%);
-    }
-    to {
-        transform: translateX(0%);
-    }
+  from {
+    transform: translateX(500%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 .display {
-    display: inline-block;
-    animation: appear 1s ease-in-out;
+  display: inline-block;
+  animation: appear 1s ease-in-out;
+}
+@media (max-width: 440px) {
+  .contact-card {
+    min-width: 350px;
+  }
+}
+@media (max-width: 365px) {
+  .contact-card {
+    min-width: 300px;
+  }
 }

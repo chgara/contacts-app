@@ -1,80 +1,142 @@
 * {
-    box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-    color: white;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: "Quicksand", sans-serif;
 }
 body,
 html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
 }
 
 .error-box {
-    position: absolute;
-    top: 1%;
-    width: 80%;
-    right: 10%;
+  position: absolute;
+  top: 1%;
+  width: 80%;
+  right: 10%;
 }
 .error-msg {
-    background-color: hsla(0, 25%, 54%, 0.802);
-    color: red;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 2.5%;
-    animation: appear 1s ease-in;
+  background-color: hsla(0, 25%, 54%, 0.802);
+  color: red;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 2.5%;
+  animation: appear 1s ease-in;
 }
 .error-msg p,
 .error-msg i {
-    font-size: 1.2em;
-    font-weight: 900;
+  font-size: 1.2em;
+  font-weight: 900;
 }
 .error-msg i {
-    position: absolute;
-    left: 5%;
-    font-size: 1.3em;
-    cursor: pointer;
+  position: absolute;
+  left: 3%;
+  font-size: 1.3em !important;
+  color: white;
+  cursor: pointer;
 }
 .succes-box {
-    position: absolute;
-    top: 1%;
-    width: 40%;
-    min-width: 320px;
-    right: 30%;
+  position: absolute;
+  top: 20vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
 }
 .success-msg {
-    background-color: hsla(122, 25%, 54%, 0.802);
-    color: green;
-    border-radius: 8px;
-    margin-bottom: 5px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 2.5%;
-    animation: appear 1s ease-in;
+  animation: appear 1s ease-in;
+  background-color: hsla(122, 25%, 54%, 0.802);
+  color: green;
+  border-radius: 8px;
+  width: 35%;
+  padding: 1%;
 }
-.success-msg p,
-.success-msg i {
-    font-size: 1.2em;
-    font-weight: 900;
+.icon-box {
+  display: inline-block;
+  width: 10%;
+  height: 100%;
 }
-.success-msg i {
-    position: absolute;
-    left: 5%;
-    font-size: 1.3em;
-    cursor: pointer;
+.icon-box i {
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.text-box {
+  display: inline-block;
+  height: 100%;
+  width: 80%;
+  text-align: center;
+}
+.text-box p {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 .none {
-    display: none !important;
+  display: none !important;
+}
+@media (max-width: 890px) {
+  .success-msg {
+    width: 40%;
+  }
+}
+@media (max-width: 770px) {
+  .success-msg {
+    width: 45%;
+  }
+}
+@media (max-width: 680px) {
+  .success-msg {
+    width: 50%;
+  }
+}
+@media (max-width: 610px) {
+  .success-msg {
+    width: 60%;
+    padding: 1.5%;
+  }
+}
+@media (max-width: 505px) {
+  .success-msg {
+    width: 65%;
+  }
+}
+@media (max-width: 470px) {
+  .success-msg {
+    width: 75%;
+  }
+}
+@media (max-width: 405px) {
+  .success-msg {
+    width: 90%;
+    padding: 2%;
+  }
+}
+@media (max-width: 340px) {
+  .success-msg {
+    width: 95%;
+    padding: 2%;
+  }
+  .text-box {
+    width: 80%;
+  }
+}
+@media (max-width: 320px) {
+  .success-msg {
+    width: 99%;
+    padding: 2%;
+  }
+  .text-box {
+    width: 80%;
+  }
 }

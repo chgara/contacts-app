@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <%- include("components/links/loader-links") %> <%-
-        include("components/links/login-register") %>
-        <%-include("components/links/new-contact.ejs") %>
-        <title>New contact</title>
-    </head>
-    <body>
-        <%- include("components/parts/loader") %>
-        <div class="loging-page">
-            <div class="loging-box">
-                <h3 class="loging-title">Please Log In</h3>
-                <form method="POST" action="/contacts/add">
-                    <div class="input-group">
-                        <label for="name">Contact Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Put your contact name"
-                            value="<%= typeof name!= 'undefined' ? name : '' %>"
-                        />
-                    </div>
-                    <div class="input-group">
-                        <label for="relation">Relation</label>
-                        <input
-                            type="text"
-                            name="relation"
-                            id="relation"
-                            placeholder="Put your contact relation"
-                            value="<%= typeof relation!= 'undefined' ? relation : '' %>"
-                        />
-                    </div>
-                    <div class="input-group">
-                        <label for="number">Phone Number</label>
-                        <p>Ej: 600-600-600</p>
-                        <input
-                            type="tel"
-                            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-                            name="number"
-                            id="number"
-                            placeholder="Put your contact number"
-                            value="<%= typeof number!= 'undefined' ? number : '' %>"
-                        />
-                    </div>
-                    <div class="loging-box-button">
-                        <button
-                            type="submit"
-                            class="loging-button"
-                            value="Login"
-                        >
-                            Add
-                        </button>
-                    </div>
-                </form>
-                <%- include("components/parts/error-success") %>
-            </div>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include("components/links/loader-links") %> <%-
+    include("components/links/login-register") %>
+    <%-include("components/links/new-contact.ejs") %>
+    <title>New contact</title>
+  </head>
+  <body>
+    <%- include("components/parts/loader") %>
+    <div class="loging-page">
+      <div class="loging-box">
+        <h3 class="loging-title"><%= action %></h3>
+        <form method="POST" action="<%= href %> ">
+          <div class="input-group">
+            <label for="name">Contact Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Put your contact name"
+              value="<%= typeof name!= 'undefined' ? name : '' %>"
+            />
+          </div>
+          <div class="input-group">
+            <label for="relation">Relation</label>
+            <input
+              type="text"
+              name="relation"
+              id="relation"
+              placeholder="Put your contact relation"
+              value="<%= typeof relation!= 'undefined' ? relation : '' %>"
+            />
+          </div>
+          <div class="input-group">
+            <label for="number">Phone Number</label>
+            <p>Ej: 600-600-600</p>
+            <input
+              type="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+              name="number"
+              id="number"
+              placeholder="Put your contact number"
+              value="<%= typeof number!= 'undefined' ? number : '' %>"
+            />
+          </div>
+          <div class="loging-box-button">
+            <button type="submit" class="loging-button" value="Login">
+              Add
+            </button>
+          </div>
+        </form>
+        <%- include("components/parts/error-success") %>
+      </div>
+    </div>
+  </body>
 </html>
