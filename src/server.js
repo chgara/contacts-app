@@ -32,7 +32,9 @@ app.use(
   session({
     secret: "contacts secret app",
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+	coockie:{
+		maxAge: 24 * 60 * 60 * 1000}
   })
 );
 app.use(passport.initialize());
