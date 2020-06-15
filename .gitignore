@@ -1,4 +1,5 @@
 
-node_modules
-Procfile
-.prrettierignore
+/node_modules
+/Procfile
+/.prrettierignore
+/.vscode
